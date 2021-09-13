@@ -23,6 +23,7 @@ class PeopleFactory extends Factory
     public function definition()
     {
         return [
+            'uuid' => Str::uuid(),
             'category_id' => mt_rand(1, 3),
             'name' => $this->faker->name(),
             'nim' => $this->faker->unique()->numerify('D#########'),

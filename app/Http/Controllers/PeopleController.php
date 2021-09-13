@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\People;
 use Error;
+use App\Models\People;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -17,6 +18,7 @@ class PeopleController extends Controller
      */
     public function index()
     {
+        // dd(Str::uuid());
         $peoples = People::all();
         return view('pages.people', ['peoples' => $peoples]);
     }

@@ -15,6 +15,7 @@ class CreatePeopleTable extends Migration
     {
         Schema::create('people', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->unique();
             $table->foreignId('category_id');
             $table->string('name');
             $table->char('nim')->unique();
